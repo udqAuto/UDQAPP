@@ -5,41 +5,80 @@
             id: 0,
             pn:'',
             brand: '',
-            time:''
+            time: '',
+            washer:''
+        };        
+        $scope.max = 5;
+        $scope.ratingVal = 2;
+        $scope.readonly = false;
+        $scope.onHover = function (val) {
+            $scope.hoverVal = val;
         };
-        var template = '';
-
-        $scope.popover = $ionicPopover.fromTemplate(template, {
-            scope: $scope
-        });
-        $scope.openPopover = function ($event) {
-            $scope.popover.show($event);
-        };
-        $scope.setSport = function (item) {
+        $scope.onLeave = function () {
+            $scope.hoverVal = null;
+        }
+        $scope.onChange = function (val) {
+            $scope.ratingVal = val;
+        }
+        //获取进行中的订单信息
+        $scope.setDoingOrder = function (item) {
             tempOrderItem = item;
-            var s = tempOrderItem.id + 'fa' + tempOrderItem.brand;
-            template = '<ion-popover-view><ion-header-bar> <h1 class="title">订单编号：' + tempOrderItem.id + '</h1> </ion-header-bar> <ion-content> 车牌号：' + tempOrderItem.pn + '  品牌:' + tempOrderItem.brand + '预定清洗时间：' + tempOrderItem.time + ' </ion-content></ion-popover-view>';
+
+            $ionicPopover.fromTemplateUrl('view/showDoingOwnerOrder.html', {
+                scope: $scope
+            }).then(function (popover) {
+                
+                $scope.popover = popover;
+            });
+        }
+        //获取已完成的的订单信息
+        $scope.setDoneOrder = function (item) {
+            tempOrderItem = item;
+            $ionicPopover.fromTemplateUrl('view/EditDoneOwnerOrder.html', {
+                scope: $scope
+            }).then(function (popover) {
+                
+                $scope.popover = popover;
+            });
+
         }
 
-        $scope.orderItems = [{
+        $scope.doingOrderItems = [{
             id:1,
             pn: '川Aed3d12',
             brand: '奥迪',
-            time:'2015-7-21:12:00'
-        }, {
-            id: 2,
-            pn: '川Aed3d12',
-            brand: '奥迪',
-            time: '2015-7-21:12:00'
+            time: '2015-7-21:12:00',
+            washer:'御都花园洗车店'
         }, {
             id: 3,
             pn: '川Aed3d12',
             brand: '奥迪',
-            time: '2015-7-21:12:00'
+            time: '2015-7-21:12:00',
+            washer: '御都花园洗车店'
         },{
             id: 4,
             pn: '川Aed3d12',
             brand: '奥迪',
-            time: '2015-7-21:12:00'
-    },];
+            time: '2015-7-21:12:00',
+            washer: '御都花园洗车店'
+        }, ];
+        $scope.doneOrderItems = [{
+            id: 4,
+            pn: '川B121212',
+            brand: '奥迪',
+            time: '2015-7-21:12:00',
+            washer: '御都花园洗车店'
+        }, {
+            id: 5,
+            pn: '川B121212',
+            brand: '奥迪',
+            time: '2015-7-21:12:00',
+            washer: '御都花园洗车店'
+        }, {
+            id: 6,
+            pn: '川B121212',
+            brand: '奥迪',
+            time: '2015-7-21:12:00',
+            washer: '御都花园洗车店'
+        }, ];
     }])

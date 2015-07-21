@@ -1,31 +1,8 @@
-﻿<!--编辑车辆信息-->
-<ion-view>
-    <div class="bar bar-header">
-        <div class="h1 title">添加车辆信息</div>
-        <button class="button button-icon icon ion-navicon"></button>
-    </div>
-
-    <ion-content padding="true" class="has-header">
-        <form>
-            <ion-list>
-                <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" name="pn" placeholder="请输入车牌号" ng-model="" required>
-                </label>
-                <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" name="brand" placeholder="请输入品牌" ng-model="" required>
-                </label>
-                <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" name="color" placeholder="请输入颜色" ng-model="" >
-                </label>
-                <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" name="model" placeholder="请输入型号" ng-model="" >
-                </label>
-            </ion-list>
-            <button class="button button-stable button-block ">下一步</button>
-        </form>
+﻿<ion-popover-view style="height:100px;width:100px;">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-click="goToAddAutoInfo()">添加</ion-item>
+            <ion-item ng-click="setShouldShowDelete()">删除</ion-item>
+        </ion-list>
     </ion-content>
-</ion-view>
+</ion-popover-view>
