@@ -1,0 +1,39 @@
+﻿<!-- 登录视图 -->
+<ion-view title="注册">
+    <div>
+        <div>
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button class="button-clear">
+                    <i class="ion-arrow-left-c"></i>back
+                </ion-nav-back-button>
+            </ion-nav-bar>
+        </div>
+    </div>
+
+    <ion-content padding="true" class="has-header">
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="tel" name="userName" placeholder="请输入手机号码" ng-model="user.userName" required>
+                </label>
+
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="password" name="password" placeholder="请输入密码" ng-model="user.password" required>
+                </label>
+
+            </ion-list>
+            <div class="button-bar"></div>
+            <label class="item item-select">
+                <span class="input-label">请选择登录方式：</span>
+                <select>
+                    <option>密码</option>
+                    <option>验证码</option>
+                </select>
+            </label>
+            <button class="button button-stable button-block ">立即登录</button>
+            <a href="#/signup" class="button button-positive button-clear button-block ">注册用户</a>
+        </form>
+    </ion-content>
+</ion-view>

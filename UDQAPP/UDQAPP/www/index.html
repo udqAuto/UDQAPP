@@ -2,19 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <title>UDQAPP</title>
+    <meta charset="utf-8"/>
+    <link href="css/ionic.css" rel="stylesheet"/>
+
+
 
     <!-- UDQAPP 引用 -->
-    <link href="css/index.css" rel="stylesheet" />
-</head>
-<body>
-    <p>Hello，你的应用程序已准备就绪!</p>
-
+    <script src="scripts/lib/ionic.js"></script>
+    <script src="scripts/lib/ionic.bundle.js"></script>
     <!-- Cordova 引用，它在生成应用程序时添加到其中。 -->
     <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
-
-    <script src="scripts/index.js"></script>
+    <script src="scripts/platformOverrides.js"></script>    
+    <script src="scripts/module/app.js"></script>
+    <script src="scripts/controller/loginController.js"></script>
+    <script src="scripts/controller/welcomeController.js"></script>
+    <script src="scripts/controller/ownerMenuController.js"></script>
+    <script src="scripts/controller/loadController.js"></script>
+    <script src="scripts/controller/signUpController.js"></script>
+    <script src="scripts/controller/editAutoInfoController.js"></script>
+    <script src="scripts/controller/editOwnerInfoController.js"></script>
+    <script src="scripts/controller/ownerCenterController.js"></script>
+    <script src="scripts/controller/ownerOrderController.js"></script>
+</head>
+<body ng-app="udqApp">
+	
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+	
 </body>
 </html>

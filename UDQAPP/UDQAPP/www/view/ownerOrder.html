@@ -1,0 +1,38 @@
+﻿<ion-view title="我的订单">
+    <div>
+        <div>
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button class="button-clear">
+                    <i class="ion-arrow-left-c"></i>back
+                </ion-nav-back-button>
+            </ion-nav-bar>
+        </div>
+    </div>
+    <!--订单展示-->
+    <ion-tabs class="tabs-stable tabs-top">
+        <ion-tab title="进行中">
+            <div>
+                <ion-content>
+                    <!--列表展示进行中的订单-->
+                    <ion-list ng-repeat="item in orderItems">
+                        <a class="item item-icon-left  item-icon-right" ng-click="setSport(item);popover.show($event)">
+                            <i class="icon ion-clock"></i>
+                            订单号：{{item.id}}  车牌号:{{item.pn}}
+                            <i class="icon ion-chevron-right"></i>
+                        </a>
+                    </ion-list>
+                </ion-content>
+                
+            </div>
+        </ion-tab>
+        <ion-tab title="已完成">
+            <ion-content padding="true" class="has-header">
+                <!--列表展示已完成的订单-->
+                <ion-list ng-repeat="item in orderItems">
+
+                </ion-list>
+            </ion-content>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>
